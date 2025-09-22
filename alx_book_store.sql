@@ -38,7 +38,7 @@ CREATE TABLE Orders (
         ON DELETE CASCADE
 );
 
--- Create Order_Details Table
+
 CREATE TABLE Order_Details (
     orderdetailid INT AUTO_INCREMENT PRIMARY KEY,
     order_id INT NOT NULL,
