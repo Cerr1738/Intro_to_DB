@@ -1,0 +1,20 @@
+version: "3.9"
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: mysql_alx_book_store
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: my-secret-pw
+      MYSQL_DATABASE: alx_book_store
+      MYSQL_USER: alx_user
+      MYSQL_PASSWORD: alx_password
+    ports:
+      - "3308:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./alx_book_store.sql:/docker-entrypoint-initdb.d/alx_book_store.sql:ro
+
+volumes:
+  mysql_data:
