@@ -19,7 +19,7 @@ def create_database():
             cursor.close()
 
     except Error as e:
-        print(f"mysql connector: {e}")
+        print(f"Error while connecting to MySQL: {e}")
 
     finally:
         if connection and connection.is_connected():
